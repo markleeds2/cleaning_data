@@ -17,15 +17,15 @@ require("data.table")
 require("reshape2")
 
 # LOAD ACTIVITY LABELS
-activity_labels <- read.table("UCI_HAR/activity_labels.txt",stringsAsFactors=FALSE)[,2]
+activity_labels <- read.table("UCI_HAR_Dataset/activity_labels.txt",stringsAsFactors=FALSE)[,2]
 
 # LOAD DATA COLUMN NAMES
-features <- read.table("UCI_HAR/features.txt",stringsAsFactors=FALSE)[,2]
+features <- read.table("UCI_HAR_Dataset/features.txt",stringsAsFactors=FALSE)[,2]
 
 # LOAD AND PROCESS X_TEST & Y_TEST DATA.
-X_test <- read.table("UCI_HAR/test/X_test.txt",stringsAsFactors=FALSE)
-y_test <- read.table("UCI_HAR/test/y_test.txt",stringsAsFactors=FALSE)
-subject_test <- read.table("UCI_HAR/test/subject_test.txt",stringsAsFactors=FALSE)
+X_test <- read.table("UCI_HAR_Dataset/test/X_test.txt",stringsAsFactors=FALSE)
+y_test <- read.table("UCI_HAR_Dataset/test/y_test.txt",stringsAsFactors=FALSE)
+subject_test <- read.table("UCI_HAR_Dataset/test/subject_test.txt",stringsAsFactors=FALSE)
 names(X_test) = features
 
 # APPROPRIATELY LABEL THE DATA SET WITH DESCRIPTIVE VARIABLE NAMES.
@@ -48,9 +48,9 @@ names(y_test) = c("Activity_ID", "Activity_Label")
 names(subject_test) = "subject"
 
 # LOAD AND PROCESS X_TRAIN & Y_TRAIN DATA.
-X_train <- read.table("UCI_HAR/train/X_train.txt",stringsAsFactors=FALSE)
-y_train <- read.table("UCI_HAR/train/y_train.txt",stringsAsFactors=FALSE)
-subject_train <- read.table("UCI_HAR/train/subject_train.txt")
+X_train <- read.table("UCI_HAR_Dataset/train/X_train.txt",stringsAsFactors=FALSE)
+y_train <- read.table("UCI_HAR_Dataset/train/y_train.txt",stringsAsFactors=FALSE)
+subject_train <- read.table("UCI_HAR_Dataset/train/subject_train.txt")
 names(X_train) = features
 
 # SAME NAME IMPROVEMENTS FOR X_train AS THERE WERE FOR X_test
@@ -60,8 +60,6 @@ names(X_train) <- gsub("^t", "Time", names(X_train))
 names(X_train) <- gsub("-mean\\(\\)", "Mean", names(X_train))
 names(X_train) <- gsub("-std\\(\\)", "StdDev", names(X_train))
 names(X_train) <- gsub("-", "", names(X_train))
-
-print(names(X_train))      
 
 # CONSTRUCT REGULAR EXPRESSION THE MEASUREMENTS ON THE NON XYZ,
 # NON TIME RELATED, MEAN AND STANDARD DEVIATION FOR EACH MEASUREMENT.
@@ -103,7 +101,7 @@ print(head(tidy_data))
 # DPLYR
 # DATA.TABLE      
 
-write.table(tidy_data, file = "./tidy_data.txt")
+write.table(tidy_data, file = "tidy_data.txt")
 
 
 
