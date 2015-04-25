@@ -86,6 +86,8 @@ compdata = rbind(test_data, train_data)
 # NO LONGER NEED ACTIVITY_ID
 compdata$Activity_ID <- NULL
 
+print(head(compdata))
+
 id_labels   = c("subject", "Activity_Label")
 data_labels = setdiff(colnames(compdata), id_labels)
 
@@ -103,7 +105,9 @@ tidy_dplyr <- as.data.frame(tidy_dplyr)
 write.table(tidy_dplyr, file = "tidy_data.txt")
 
 #chk_data <- read.table("tidy_data.txt", sep = " ", header = TRUE)
-#print(head(chk_data))
+#print(head(chk_data,10))
+
+
 
 
 
