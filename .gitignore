@@ -1,4 +1,8 @@
-# ignore zip files
+# ignore files
 *.zip
 .Rhistory
+UCI_HAR_Dataset/*
+
+
+
 
