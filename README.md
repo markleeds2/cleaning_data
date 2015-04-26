@@ -11,10 +11,10 @@ this directory should reside).
 ## STEPS FOR CREATING AND CHECKING THE LONG FORM SUMMARY FILE: "tidy_data.txt"
 
 * Unzip the source (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into a directory on your local drive, say 
-  "~/coursera/gcd_course/class_proj" in Linux or the analogous directory in Windows. This will resulting in a directory called "UCI HAR DataSet" 
-  being created in class_proj.
+  "~/coursera/gcd_course/class_proj" in Linux or the analogous directory in Windows. This will result in a directory called "UCI HAR DataSet" 
+  being created in the "class_proj" directory.
 
-* Rename the created directory to "UCI_HAR_Dataset" so that the lack of underscores in the original directory do not cause any problems.
+* Rename the created directory to "UCI_HAR_Dataset" so that the lack of underscores in the original directory does not cause any problems.
  
 * Place the R code file "run_analysis.R" into "~/coursera/gcd_course/class_proj".
 
