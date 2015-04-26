@@ -39,7 +39,21 @@ The attached R script (run_analysis.R) performs the following steps which were p
 * Finally, the final merged data set in the previous step was used as the input and a tidy data set called "tidy__data.txt" was
   created as a text file. The tidy data set contains the mean of each measurement for each "subject Activity_Label" grouping. The 
   corresponding R object based on tidy_data.txt can be created using the R code "tidy_data <- read.table("tidy_data.txt", header = TRUE)". 
-  The dimension of the resulting data frame  is 180x10. The row dimension results from the fact that there are 30 subjects with each subject performing 6 activities. 
-  The column dimension results from the fact that there 2 columns representing subject and Activity_Label respectively and 8 other columns representing the mean 
-  measurements for the particular "subject Activity_Label" grouping.
+  The dimension of the resulting data frame  is 1440 x 4. The row dimension results from the fact that there are 30 subjects with each subject performing 
+  6 activities and 8 measurements associated with each activity.  The column dimension results from the fact that there are 2 columns "variable" and "value". The 
+  "variable" column denotes the description of the particular measurement and the "value" column represents the numeric value of that measurenent.  The 
+  R object version of the "tidy_data.txt" data set is shown below.
+
+        'data.frame':   1440 obs. of  4 variables:
+         $ subject       : int  1 1 1 1 1 1 1 1 1 1 ...
+         $ Activity_Label: Factor w/ 6 levels "LAYING","SITTING",..: 1 1 1 1 1 1 1 1 2 2 ...
+         $ variable      : Factor w/ 8 levels "FrequencyBodyAccJerkMagMean",..: 3 4 1 2 7 8 5 6 3 4 ...
+         $ value         : num  -0.862 -0.798 -0.933 -0.922 -0.862 ...
+
  
+
+
+ 
+
+
+
