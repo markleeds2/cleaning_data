@@ -21,9 +21,8 @@ this directory should reside).
 * Running the Code: In the RStudio source panel, type setwd("~/coursera/gcd_course/class_proj"), followed by: source("run_analysis.R") and
   run that code by clicking on the "Source" icon in the source panel.
 
-* Checking the resulting text file: The file "tidy_data.txt" is created using the source command, type 
-  "summDF <- read.table("tidy_data.txt", sep = " ", header = TRUE)" in the RStudio code editor in order to read  the text file into an R data.frame 
-  called summDF. summDF is a 180x10 data.frame representing tidy data in the long form. There are 30 subjects and 6 activities. 
-  Thus, each "subject-Activity_Label" grouping  results in 180 rows. Similarly, the columns are "subject" "Activity_Label" "variable" "value" where variable 
-  denotes the particular measurement description and value denotes the value of that measurement.
-
+* Checking the resulting text file: The file "tidy_data.txt" is created after "Source icon" is clicked in the previous step. One can  type 
+  "summDF <- read.table("tidy_data.txt", sep = " ", header = TRUE)" in the RStudio source panel in order to read  the text file into an R data.frame 
+  called summDF. summDF will be a 180x10 data.frame representing the long form of the tidy data . There are 30 subjects and 6 activities. 
+  Thus, each "subject-Activity_Label" grouping  results in 180 rows. Similarly, the columns are "subject" "Activity_Label" "variable" "value" where 
+  variable denotes the particular measurement description and value denotes the average value of that measurement.
