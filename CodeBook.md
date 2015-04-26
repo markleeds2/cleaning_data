@@ -7,21 +7,22 @@ Original description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Reco
 
 The attached R script (run_analysis.R) performs the following steps which were part of the course project involving tidying up a data set.
 
-* Merges the training and test sets along with the descriptive names of the measurements in order to create one data set. The result  is a 10299 x 564 data frame. 
-  This is because there were 10299 observations and each observation contains 564 components because there were 561 measurements taken per observation along with the 
-  columns subject, Activity_ID, and Activity_Label.
-
-* The script also appropriately labels the data set with descriptive names
-  All column names were modified so that names starting with f were changed so that Frequency replaced f. 
-  All column names were modified so that names starting with t were changed so that Time replaced t. 
-  All dashes existing in any column names were removed.
-  Typos in the column name containing BodyBody was changed to Body.
+* Merges the training and test sets along with the descriptive names of the measurements in order to create one data set. The result  is a 10299 x 564 data frame.
+  The row dimension results from the fact that there were 10299 observations across subjects and activities. The column dimension results from the fact that were 561 
+  measurements taken per observation along with the column names "subject", "Activity_ID" and "Activity_Label". Since the Activity_Label column and the Activity_ID column 
+  both represented the same variable with the former being in words and the latter being codes, Activity_ID was removed from the final merged data set.
 
 * The script reads the column names representing the measurements  and extracts only the measurements where the name contained f in the first character and ended 
-  in either mean or std and did not contain (XYZ) at the end. The resulted in a 10299 x 8 data frame because only 8 out of the 561 column names met 
+  in either mean or std and did not contain X, Y, or Z at the end. The resulted in a 10299 x 8 data frame because only 8 out of the 561 measurements met 
   the filter. All measurements are floating point numbers in the range (-1, 1).
 
-  The filter resulted in the following  data set.
+* The script also appropriately labels the data set with descriptive names
+  All column names were modified so that names starting with "f" were changed so that "Frequency" replaced "f". 
+  All column names were modified so that names starting with "t" were changed so that "Time" replaced "t". 
+  All dashes existing in any column names were removed.
+  A typo in the column name containing "BodyBody" instead of "Body" was changed to "Body".
+
+  The previous 3 steps resulted in the following merged data set.
 
  'data.frame':	10299 obs. of  10 variables:
   $ subject                       : int  2 2 2 2 2 2 2 2 2 2 ...
@@ -35,8 +36,10 @@ The attached R script (run_analysis.R) performs the following steps which were p
   $ FrequencyBodyGyroJerkMagMean  : num  -0.89 -0.952 -0.986 -0.986 -0.99 ...
   $ FrequencyBodyGyroJerkMagStdDev: num  -0.907 -0.938 -0.983 -0.986 -0.991 ...
 
-* Finally, the script creates uses the data set in the previous step as the input and creates a summary data set called "tidy__data.txt" set. 
- The data set contains the mean of each measurement for each activity and each subject.  The R object created from this tidy_data.txt can be created using the 
- tidy_data <- read.table("tidy_data.txt", header = TRUE). The dimension of the resulting data frame  is 180x10  because there are 2 variables representing subject and 
- Activity_Label respectively and the other 8 variables representing the mean measurements for the particular "subject Activity_Label" grouping.
+* Finally, the final merged data set in the previous step was used as the input and a tidy data set called "tidy__data.txt" was
+  created as a text file. The tidy data set contains the mean of each measurement for each "subject Activity_Label" grouping.  
+  The corresponding R object based on tidy_data.txt can be created using the R code "tidy_data <- read.table("tidy_data.txt", header = TRUE)". 
+  The dimension of the resulting data frame  is 180x10. The row dimension results from the fact that there are 30 subjects with each subject performing 6 activities. 
+  The column dimension results from the fact that there 2 columns representing subject and Activity_Label respectively and 8 other columns representing the mean 
+  measurements for the particular "subject Activity_Label" grouping.
  
