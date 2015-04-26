@@ -1,4 +1,4 @@
-Getting and Cleaning Data
+cleaning_data
 =========================
 
 This is a github repository for all of the code written for the Coursera Getting and Cleaning Data Course Project given by Johns Hopkins University.
@@ -18,8 +18,8 @@ this directory should reside).
  
 * Place the R code file "run_analysis.R" into "~/coursera/gcd_course/class_proj".
 
-* Running the Code: In the RStudio code editor: type setwd("(~/coursera/gcd_course/class_proj", followed by: source("run_analysis.R") and
-  run that code.
+* Running the Code: In the RStudio source panel, type setwd("(~/coursera/gcd_course/class_proj", followed by: source("run_analysis.R") and
+  run that code by clicking on the "Source" icon in the source panel.
 
 * Checking the resulting text file: After the file "tidy_data.txt" is created using the source command, type 
   "summDF <- read.table("tidy_data.txt", sep = " ", header = TRUE)" in the RStudio code editor in order to read  the text file into an R data.frame 
