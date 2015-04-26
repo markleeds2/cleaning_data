@@ -5,7 +5,7 @@ Source of the original data: https://d396qusza40orc.cloudfront.net/getdata%2Fpro
 
 Original description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The attached R script (run_analysis.R) performs the following steps which are an exercise for how to tidy up a data set.
+The attached R script (run_analysis.R) performs the following steps which were part of the course project which involved tidying up a data set.
 
 * Merges the training and test sets along with the descriptive names of the measurements in order to create one data set. The result  is a 10299 x 564 data frame. 
   This is because there were 10299 observations and each observation contains 564 components because there were 561 measurements taken per observation along with the 
