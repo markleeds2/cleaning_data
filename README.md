@@ -3,10 +3,10 @@ Getting and Cleaning Data
 
 This is a github repository for all of the code written for the Coursera Getting and Cleaning Data Course Project given by Johns Hopkins University.
 Note that only "CodeBook.md", "README.md", "run_analysis.R" and the ".gitignorefile" are contained in the repository. This is because when we tried 
-to include the downloaded data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) we got a warning that we 
+to include the downloaded data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), we got a warning that we 
 were exceeding the normal 50 Gigabyte limit. Therefore, the instructions that follow assume that run_analysis.R has the same parent directory as 
 UCI_HAR_Dataset which is the directory obtained by unzipping the zipped file that was downloaded from the link (see below for more details on where 
-this directory should reside ).
+this directory should reside).
 
 ## Course Project
 
