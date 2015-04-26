@@ -8,7 +8,7 @@ were exceeding the normal 50 Gigabyte limit. Therefore, the instructions that fo
 UCI_HAR_Dataset which is the directory obtained by unzipping the zipped file that was downloaded from the link (see below for more details on where 
 this directory should reside).
 
-## Course Project
+## STEPS FOR CREATING AND CHECKING THE OUTPUT FILE: "tidy_data.txt"
 
 * Unzip the source (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into a directory on your local drive, say 
   "~/coursera/gcd_course/class_proj" in Linux or the analogous directory in Windows. This will resulting in a directory called "UCI HAR DataSet" 
