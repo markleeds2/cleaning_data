@@ -72,7 +72,7 @@ X_train = X_train[,extract_features]
 # LOAD ACTIVITY DATA
 y_train[,2] = activity_labels[y_train[,1]]
 
-# CREATE THE DESCRIPTIVE NAMES
+#  ADD COLUMN NAMES BEFORE MERGING
 names(y_train) = c("Activity_ID", "Activity_Label")
 names(subject_train) = "subject"
 
@@ -86,14 +86,16 @@ compdata = rbind(test_data, train_data)
 # NO LONGER NEED ACTIVITY_ID
 compdata$Activity_ID <- NULL
 
+# CREATE A VARIABLE HOLDING THE MEASUREMENT NAMES
 id_labels   = c("subject", "Activity_Label")
 data_labels = setdiff(colnames(compdata), id_labels)
 
 # USE gather FUNCTION FROM tidyr to CONVERT DATA TO LONG
+# FORMAT
 indices <- match(data_labels, names(compdata))
 gath_data <- gather(compdata, "variable", "value", indices)
 
-# USING PLYR AND CHAINING TO GET MEANS BY DATA VARIABLES
+# USING PLYR AND CHAINING TO GET MEANS OF DATA VARIABLES
 tidy_dplyr <- gath_data %>% group_by(subject, Activity_Label, variable) %>% summarize(value = mean(value, na.rm = TRUE))
 
 # CONVERT TO PLAIN OLD DATA.FRAME
@@ -102,8 +104,10 @@ tidy_dplyr <- as.data.frame(tidy_dplyr)
 # WRITE OUTPUT TO TEXT FILE
 write.table(tidy_dplyr, file = "tidy_data.txt")
 
+# CONVERT tidy_data.txt TO A DATA.FRAME FOR CHECKING PURPOSES 
 #chk_data <- read.table("tidy_data.txt", sep = " ", header = TRUE)
 #print(head(chk_data,10))
+
 
 
 
