@@ -37,8 +37,8 @@ The attached R script (run_analysis.R) performs the following steps which were p
         $ FrequencyBodyGyroJerkMagStdDev: num  -0.907 -0.938 -0.983 -0.986 -0.991 ...
 
 * Finally, the final merged data set in the previous step was used as the input and a tidy data set called "tidy__data.txt" was
-  created as a text file. The tidy data set contains the mean of each measurement for each "subject Activity_Label" grouping.  
-  The corresponding R object based on tidy_data.txt can be created using the R code "tidy_data <- read.table("tidy_data.txt", header = TRUE)". 
+  created as a text file. The tidy data set contains the mean of each measurement for each "subject Activity_Label" grouping. The 
+  corresponding R object based on tidy_data.txt can be created using the R code "tidy_data <- read.table("tidy_data.txt", header = TRUE)". 
   The dimension of the resulting data frame  is 180x10. The row dimension results from the fact that there are 30 subjects with each subject performing 6 activities. 
   The column dimension results from the fact that there 2 columns representing subject and Activity_Label respectively and 8 other columns representing the mean 
   measurements for the particular "subject Activity_Label" grouping.
